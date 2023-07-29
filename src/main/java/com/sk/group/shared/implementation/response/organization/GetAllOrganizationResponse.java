@@ -23,6 +23,15 @@ public class GetAllOrganizationResponse extends ControllerResponse {
 	 */
 	private static final long serialVersionUID = -3854686833869885738L;
 	
-	private List<Object> organizations;
+	private List<Organization> organizations;
+	
+	@Getter
+	@Setter
+	public static class Organization {
+		
+		private long organizationId;
+		private String organizationName;
+		
+	}
 
 }

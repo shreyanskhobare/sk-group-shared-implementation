@@ -91,7 +91,12 @@ public class GroupControllerAdvice {
 
 		}
 
-		return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+		if (null != e.getHttpStatus()) {
+			httpStatus = e.getHttpStatus();
+		}
+		
+		return new ResponseEntity<>(response, httpStatus);
 
 	}
 
