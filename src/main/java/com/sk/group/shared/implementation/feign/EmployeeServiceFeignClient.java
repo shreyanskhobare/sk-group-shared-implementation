@@ -25,7 +25,6 @@ import com.sk.group.shared.implementation.employee.response.FilterEmployeesRespo
 import com.sk.group.shared.implementation.employee.response.GetEmployeePersonalInfoResponse;
 import com.sk.group.shared.implementation.employee.response.GetEmployeeResponse;
 import com.sk.group.shared.implementation.employee.response.SaveEmployeeResponse;
-import com.sk.group.shared.implementation.exception.GroupException;
 
 /**
  * @author - Shreyans Khobare
@@ -37,14 +36,12 @@ public interface EmployeeServiceFeignClient {
 	public SaveEmployeeResponse saveEmployeeData(@RequestBody SaveEmployeeRequest employeePersonalInfo);
 
 	@GetMapping(value = EMPLOYEE_SERVICE_GET_PERSONAL_INFO)
-	public GetEmployeePersonalInfoResponse getEmployeePersonalInfo(@PathVariable("employeeId") String employeeId)
-			throws GroupException;
+	public GetEmployeePersonalInfoResponse getEmployeePersonalInfo(@PathVariable("employeePersonalInfoId") String employeePersonalInfoId);
 
 	@GetMapping(value = EMPLOYEE_SERVICE_GET_EMPLOYEE)
-	public GetEmployeeResponse getEmployee(@RequestParam("employeeId") String employeeId) throws GroupException;
+	public GetEmployeeResponse getEmployee(@RequestParam("employeeId") String employeeId);
 
 	@GetMapping(value = EMPLOYEE_SERVICE_FILTER_EMPLOYEES)
-	public FilterEmployeesResponse filterEmployees(@RequestBody FilterEmployeesRequest filterEmployeeRequest)
-			throws GroupException;
+	public FilterEmployeesResponse filterEmployees(@RequestBody FilterEmployeesRequest filterEmployeeRequest);
 
 }
