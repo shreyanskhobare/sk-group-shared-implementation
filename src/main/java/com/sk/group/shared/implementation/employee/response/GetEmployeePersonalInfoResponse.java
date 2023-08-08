@@ -6,16 +6,21 @@ package com.sk.group.shared.implementation.employee.response;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.sk.group.shared.implementation.response.controller.ControllerResponse;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author - Shreyans Khobare
  */
 @Getter
 @Setter
+@ToString
+@JsonInclude(Include.NON_NULL)
 public class GetEmployeePersonalInfoResponse extends ControllerResponse {
 
 	/**

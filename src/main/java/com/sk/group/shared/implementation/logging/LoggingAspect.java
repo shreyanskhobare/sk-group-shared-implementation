@@ -43,14 +43,16 @@ public class LoggingAspect {
 			arguments = Arrays.toString(joinPoint.getArgs());
 		}
 
-		LOGGER.debug("Entering method: {} of Class: {} with arguments: {}", signature.getName(),
+		LOGGER.info("Entering method: {} of Class: {} with arguments: {}", signature.getName(),
 				signature.getDeclaringTypeName(), arguments);
 
 	}
 
 	@AfterReturning(pointcut = "pointcut()", returning = "result")
 	public void logMethodAfter(JoinPoint joinPoint, ResponseEntity<?> result) {
-		LOGGER.debug("Exiting method: {}", joinPoint.getSignature().getName());
+		
+		LOGGER.info("Exiting method: {} with response: {}", joinPoint.getSignature().getName(), result);
+		
 	}
 
 }

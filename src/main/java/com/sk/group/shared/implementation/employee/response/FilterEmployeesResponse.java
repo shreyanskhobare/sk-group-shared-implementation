@@ -7,16 +7,21 @@ package com.sk.group.shared.implementation.employee.response;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.sk.group.shared.implementation.response.controller.ControllerResponse;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
 @author - Shreyans Khobare
 */
 @Getter
 @Setter
+@ToString
+@JsonInclude(Include.NON_NULL)
 public class FilterEmployeesResponse extends ControllerResponse {
 
 	/**
@@ -28,6 +33,8 @@ public class FilterEmployeesResponse extends ControllerResponse {
 
 	@Getter
 	@Setter
+	@ToString
+	@JsonInclude(Include.NON_NULL)
 	public static class ResponseEmployee {
 		
 		private Long employeeId;
